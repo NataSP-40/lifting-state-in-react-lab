@@ -28,7 +28,7 @@ const App = () => {
 
     // function passed down to IngredientList
   const addToBurger = (ingredient) => {
-    console.log('IngredientAdded', ingredient);
+    // console.log('IngredientAdded', ingredient);
     // create new array with new ingredient Ingredient added
     setStack(prevStack => ([...prevStack, ingredient]));
   };
@@ -36,7 +36,7 @@ const App = () => {
     // function passed down to BurgerStack
   const removeFromBurger = (index) => {
     // filter out the ingredient at the specified index
-    console.log('IngredientRemoved', index);
+    // console.log('IngredientRemoved', index);
     setStack((prevStack) => prevStack.filter((_,i) => i !== index));
   };
 

@@ -4,7 +4,7 @@ const IngredientList = (props) => {
     const { availableIngredients, addToBurger } = props;
 
   return (//looping through ingredients array passed from App
-    <ul>
+    <ul className="ingredient-list">
         
         {availableIngredients.map((ingredient) => {
             return (
