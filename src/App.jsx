@@ -3,8 +3,6 @@ import BurgerStack from './components/BurgerStack/BurgerStack.jsx';
 import { useState } from 'react';
 import './App.css';
 
-import './App.css';
-
 const App = () => {
 
   const [stack, setStack] = useState([]); // state to hold the BurgerStack
@@ -39,8 +37,6 @@ const App = () => {
     // console.log('IngredientRemoved', index);
     setStack((prevStack) => prevStack.filter((_,i) => i !== index));
   };
-
-
 
   return (
     <main>

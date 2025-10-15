@@ -1,16 +1,24 @@
+import Ingredient from '../Ingredient/Ingredient.jsx';
 
-
-const BurgerStack = (props) => {   
+const BurgerStack = ({ stack, removeFromBurger }) => {   
+  
+// Conditional rendering: if the stack is empty show a friendly message
+  if (!Array.isArray(stack) || stack.length === 0) {
+    return (
+      <p>No Ingredients ... add some!</p>
+    );
+  }
+  // if not empty
   return (
     <ul>
-        {props.stack.map((ingredient, index) => { // loping through the props.stack - array passed down from App
-            return ( // creates list item for each ingredient and renders ingredient name inside list
-                <li key={index} style={{ backgroundColor: ingredient.color }}>
-                    {ingredient.name}
-                    <button onClick={() => props.removeFromBurger(index)}>-</button>
-                </li>
-            );
-        })}
+      {stack.map((ingredient, index) => (
+        <Ingredient
+          key={index}
+          ingredient={ingredient}
+          onClick={() => removeFromBurger(index)}
+          buttonSymbol='X'
+        />
+      ))}
     </ul>
   );
 };
